@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MyInstantAppDemo</string>
+    <string name="title_dynamicfeature">InstantApp</string>
 </resources>

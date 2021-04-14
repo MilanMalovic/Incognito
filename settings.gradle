@@ -1,2 +1,3 @@
-include ':app'
+include ':dynamicfeature'
+include ':base-feature'
 rootProject.name = "MyInstantAppDemo"
