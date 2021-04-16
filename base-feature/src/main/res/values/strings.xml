@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">MyInstantAppDemo</string>
     <string name="title_dynamicfeature">InstantApp</string>
+
+    <string name="notification_channel_one">channel one</string>
+    <string name="notification_channel_desc_one">This is channel one</string>
+    <string name="notification_channel_two">channel two</string>
+    <string name="notification_channel_desc_two">This is channel two</string>
+    <string name="btn_go_next">Go Next</string>
+    <string name="welcome_header">Welcome to Installed Instant App</string>
+    <string name="detail_screen_header">Hello, this is instant app feature</string>
+
 </resources>
