@@ -1,3 +1,3 @@
 # InstantAppDemo
 
-The goal of this demo app is to show how an instant app develops.
+This is an Instant app with some device system features
