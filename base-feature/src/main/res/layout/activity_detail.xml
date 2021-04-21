@@ -3,14 +3,186 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="match_parent"
+    <RelativeLayout
+        android:id="@+id/rl_device_type"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:gravity="center"
-        android:text="@string/detail_screen_header"
-        android:textSize="22sp" />
+        android:layout_centerInParent="true"
+        android:layout_marginTop="61dp">
+
+        <TextView
+            android:id="@+id/device_type_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/device_connectivity_status"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+
+        <RelativeLayout
+            android:id="@+id/pc"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_below="@id/device_type_text"
+            android:layout_marginTop="15dp"
+            android:background="@color/lightBlueColor">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/pc_device"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/ic_baseline_wifi_24" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/pc_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/pc_device"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/wi_fi"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue_lite"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/phone"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_below="@id/device_type_text"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_toEndOf="@+id/pc"
+            android:background="@color/lightBlueColor">
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/phone_device"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/ic_baseline_gps_fixed_24" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/phone_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/phone_device"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/gps"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue_lite"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/tablet"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_below="@id/device_type_text"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_toEndOf="@+id/phone"
+            android:background="@color/lightBlueColor">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/tablet_device"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/ic_baseline_bluetooth_24" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tablet_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tablet_device"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/bluetooth"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue_lite"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_device_type">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvWifi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="Wi-Fi status: "
+            android:textColor="@color/black"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvGPS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="Location status: "
+            android:textColor="@color/black"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvBlueTooth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="Bluetooth status: "
+            android:textColor="@color/black"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAirplaneMode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="Airplane mode status: "
+            android:textColor="@color/black"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvMobileData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mobile Data Status: "
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvBatteryStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Battery Status: "
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
 
 </RelativeLayout>

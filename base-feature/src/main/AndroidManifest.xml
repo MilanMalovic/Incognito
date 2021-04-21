@@ -6,6 +6,18 @@
     android:targetSandboxVersion="2"
     tools:targetApi="o">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission
+        android:name="android.permission.SHUTDOWN"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <dist:module dist:instant="true" />
 
     <application
@@ -15,7 +27,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyInstantAppDemo">
-        <activity android:name=".WelcomeActivity">
+        <activity android:name=".InitialActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,7 +36,8 @@
         </activity>
 
 
-        <activity android:name=".DetailActivity"></activity>
+        <activity android:name=".WelcomeActivity" />
+        <activity android:name=".DetailActivity" />
 
 
     </application>
