@@ -21,7 +21,6 @@ class WelcomeActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        super.onBackPressed()
         this.showExitAlertDialog { finishAffinity() }
     }
 }

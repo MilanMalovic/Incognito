@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Invisible</string>
+    <string name="app_name">Incognito</string>
     <string name="title_dynamicfeature">InstantApp</string>
 
     <string name="notification_channel_one">channel one</string>
@@ -21,4 +21,12 @@
     <string name="gps">GPS</string>
     <string name="wi_fi">WI-FI</string>
 
+
+    <string name="waiting_for_wifi_signal_level">Waiting for WiFi signal level&#8230;</string>
+    <string name="wifi_state">WiFi State:</string>
+    <string name="wifi_signal_level">WiFi signal level:</string>
+    <string name="available_access_points">Available Access Points:</string>
+
+    <string name="requesting_location_access">Requesting location access</string>
+    <string name="do_you_want_to_open_location_settings">Do you want to open Location settings to enable location services? Without WiFi Access Points will not be detected.</string>
 </resources>
