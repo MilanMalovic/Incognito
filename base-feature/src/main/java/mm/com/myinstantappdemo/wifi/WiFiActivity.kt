@@ -2,10 +2,12 @@ package mm.com.myinstantappdemo.wifi
 
 import android.Manifest.permission
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.wifi.ScanResult
 import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
 import android.util.Log
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
@@ -14,6 +16,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.dialog_wifi.access_points
+import kotlinx.android.synthetic.main.dialog_wifi.btnWifi
 import kotlinx.android.synthetic.main.dialog_wifi.wifi_signal_level
 import kotlinx.android.synthetic.main.dialog_wifi.wifi_state_change
 import mm.com.myinstantappdemo.R
@@ -55,6 +58,10 @@ class WiFiActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dialog_wifi)
+        btnWifi.setOnClickListener {
+            val intent = Intent(Settings.ACTION_WIFI_SETTINGS)
+            startActivity(intent)
+        }
     }
 
     private fun startWifiSignalLevelSubscription() {

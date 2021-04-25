@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+
 android {
     signingConfigs {
         relase {
@@ -16,8 +17,8 @@ android {
         applicationId "mm.com.myinstantappdemo"
         minSdkVersion 22
         targetSdkVersion 30
-        versionCode 7
-        versionName "1.0.7"
+        versionCode 11
+        versionName "1.1.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -50,9 +51,16 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation "com.google.android.gms:play-services-instantapps:17.0.0"
+    implementation 'eo.view:batterymeter:2.0.0'
 
+
+    //google billing
+    implementation 'com.android.billingclient:billing:3.0.3'
+    implementation "com.android.billingclient:billing-ktx:3.0.3"
     // RxJava2 Dependencies
     implementation 'io.reactivex.rxjava2:rxjava:2.2.2'
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    //tooltips
+    implementation "com.github.skydoves:balloon:1.2.3"
 
 }

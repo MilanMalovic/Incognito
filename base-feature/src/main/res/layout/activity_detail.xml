@@ -1,213 +1,501 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:background="@color/background">
 
-    <RelativeLayout
-        android:id="@+id/rl_device_type"
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/toolbarColor">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCustomLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:gravity="start"
+                android:letterSpacing="0.015"
+                android:text="Dashboard"
+                android:textColor="@color/white"
+                android:textSize="22sp" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivDonate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/ic_baseline_local_grocery_store_24" />
+
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="61dp">
+        android:layout_below="@+id/toolbar">
 
-        <TextView
-            android:id="@+id/device_type_text"
+        <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/device_connectivity_status"
-            android:textAllCaps="true"
-            android:textColor="@color/black"
-            android:textSize="12sp" />
-
-
-        <RelativeLayout
-            android:id="@+id/wiFi"
-            android:layout_width="95dp"
-            android:layout_height="95dp"
-            android:layout_below="@id/device_type_text"
-            android:layout_marginTop="15dp"
-            android:background="@color/lightBlueColor">
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/pc_device"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:background="@drawable/ic_baseline_wifi_24" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tvwifi"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/pc_device"
-                    android:layout_centerInParent="true"
-                    android:layout_marginTop="5dp"
-                    android:text="@string/wi_fi"
-                    android:textAllCaps="true"
-                    android:textColor="@color/blue_lite"
-                    android:textSize="12sp" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tvWiFiStatus"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tvwifi"
-                    tools:text="invisible"/>
-            </RelativeLayout>
-        </RelativeLayout>
-
-
-        <RelativeLayout
-            android:id="@+id/phone"
-            android:layout_width="95dp"
-            android:layout_height="95dp"
-            android:layout_below="@id/device_type_text"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="15dp"
-            android:layout_toEndOf="@+id/wiFi"
-            android:background="@color/lightBlueColor">
+            android:layout_height="wrap_content">
 
 
             <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/phone_device"
+
+                <RelativeLayout
+                    android:id="@+id/rl_device_type"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:background="@drawable/ic_baseline_gps_fixed_24" />
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="30dp">
+
+                    <TextView
+                        android:id="@+id/device_type_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/device_connectivity_status"
+                        android:textAllCaps="true"
+                        android:textColor="@color/blackOrWhite"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/device_type_text2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/device_type_text"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/device_connectivity_status2"
+                        android:textColor="@color/blackOrWhite"
+                        android:textSize="12sp" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvLevel1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/device_type_text2"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/karla_bold"
+                        android:text="Level 1"
+                        android:textAllCaps="true"
+                        android:textColor="@color/blackOrWhite" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvBelowLvl1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvLevel1"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/philosopher_regular"
+                        android:text="@string/level1_description"
+                        android:textColor="@color/blackOrWhite"
+                        android:textSize="15sp" />
+
+                    <RelativeLayout
+                        android:id="@+id/wiFi"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:layout_below="@id/tvBelowLvl1"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/rect_tiles">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/infoBtnWiFi"
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="@drawable/thumb_info"
+                            android:gravity="center"
+                            android:paddingBottom="3dp"
+                            android:text="i"
+                            android:textAllCaps="false"
+                            android:textColor="@color/blackOrWhite"
+                            android:visibility="visible" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/pc_device"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:background="@drawable/ic_baseline_wifi_24" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvwifi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/pc_device"
+                                android:layout_centerInParent="true"
+                                android:layout_marginTop="5dp"
+                                android:text="@string/wi_fi"
+                                android:textAllCaps="true"
+                                android:textColor="@color/blue_lite"
+                                android:textSize="12sp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvWiFiStatus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tvwifi"
+                                tools:text="invisible" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlBlueTooth"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:layout_below="@id/tvBelowLvl1"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_toEndOf="@+id/wiFi"
+                        android:background="@drawable/rect_tiles">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/infoBtnBT"
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="@drawable/thumb_info"
+                            android:gravity="center"
+                            android:paddingBottom="3dp"
+                            android:text="i"
+                            android:textAllCaps="false"
+                            android:textColor="@color/blackOrWhite"
+                            android:visibility="visible" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/tablet_device"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:background="@drawable/ic_baseline_bluetooth_24" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvBt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tablet_device"
+                                android:layout_centerInParent="true"
+                                android:layout_marginTop="5dp"
+                                android:text="@string/bluetooth"
+                                android:textAllCaps="true"
+                                android:textColor="@color/blue_lite"
+                                android:textSize="12sp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvBtStatus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tvBt"
+                                android:layout_centerHorizontal="true"
+                                tools:text="Invisible" />
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvLevel2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/wiFi"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/karla_bold"
+                        android:text="Level 2"
+                        android:textAllCaps="true"
+                        android:textColor="@color/blackOrWhite" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvBelowLvl2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvLevel2"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/philosopher_regular"
+                        android:text="@string/level2_description"
+                        android:textColor="@color/blackOrWhite"
+                        android:textSize="15sp" />
+
+
+                    <RelativeLayout
+                        android:id="@+id/rlMobileData"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:layout_below="@id/tvBelowLvl2"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/rect_tiles">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/infoBtnMD"
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="@drawable/thumb_info"
+                            android:gravity="center"
+                            android:fontFamily="@font/karla_bold"
+                            android:paddingBottom="3dp"
+                            android:text="i"
+                            android:textAllCaps="false"
+                            android:textColor="@color/blackOrWhite"
+                            android:visibility="visible" />
+
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/ivData"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:background="@drawable/ic_baseline_mobiledata_off_24" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvMData"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/ivData"
+                                android:layout_centerInParent="true"
+                                android:layout_marginTop="5dp"
+                                android:text="mobile data"
+                                android:textAllCaps="true"
+                                android:textColor="@color/blue_lite"
+                                android:textSize="12sp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvMDStatus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tvMData"
+                                android:layout_centerHorizontal="true"
+                                tools:text="Invisible" />
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvLevel3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rlMobileData"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/karla_bold"
+                        android:text="Level 3"
+                        android:textAllCaps="true"
+                        android:textColor="@color/blackOrWhite" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvBelowLvl3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvLevel3"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/philosopher_regular"
+                        android:text="@string/level3_description"
+                        android:textColor="@color/blackOrWhite"
+                        android:textSize="15sp" />
+
+                    <RelativeLayout
+                        android:id="@+id/rlGps"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:layout_below="@id/tvBelowLvl3"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_toEndOf="@id/rlGsmGprs"
+                        android:background="@drawable/rect_tiles">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/infoBtnGPS"
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="@drawable/thumb_info"
+                            android:gravity="center"
+                            android:paddingBottom="3dp"
+                            android:fontFamily="@font/karla_bold"
+                            android:text="i"
+                            android:textAllCaps="false"
+                            android:textColor="@color/blackOrWhite"
+                            android:visibility="visible" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginBottom="20dp">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/phone_device"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:background="@drawable/ic_baseline_gps_fixed_24" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvGps"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/phone_device"
+                                android:layout_centerInParent="true"
+                                android:layout_marginTop="5dp"
+                                android:text="@string/gps"
+                                android:textAllCaps="true"
+                                android:textColor="@color/blue_lite"
+                                android:textSize="12sp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvGpsStatus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tvGps"
+                                tools:text="Invisible" />
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/rlGsmGprs"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:layout_below="@id/tvBelowLvl3"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/rect_tiles">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/infoBtnAir"
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="@drawable/thumb_info"
+                            android:gravity="center"
+                            android:fontFamily="@font/karla_bold"
+                            android:paddingBottom="3dp"
+                            android:text="i"
+                            android:textAllCaps="false"
+                            android:textColor="@color/blackOrWhite"
+                            android:visibility="visible" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/ivMobileData"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:background="@drawable/ic_baseline_airplanemode_active_24" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvMobileData2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/ivMobileData"
+                                android:layout_centerInParent="true"
+                                android:layout_marginTop="5dp"
+                                android:text="@string/mobile_data"
+                                android:textAllCaps="true"
+                                android:textColor="@color/blue_lite"
+                                android:textSize="12sp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvMobileDataStatus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tvMobileData2"
+                                android:layout_centerHorizontal="true"
+                                tools:text="invisible" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
 
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tvGps"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/tvAnonymous"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/phone_device"
-                    android:layout_centerInParent="true"
-                    android:layout_marginTop="5dp"
-                    android:text="@string/gps"
-                    android:textAllCaps="true"
-                    android:textColor="@color/blue_lite"
-                    android:textSize="12sp" />
+                    android:layout_below="@+id/rl_device_type"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/courier_bold"
+                    android:gravity="center"
+                    android:text="@string/anonymous"
+                    android:textColor="@color/green"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
 
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tvGpsStatus"
-                    android:layout_below="@id/tvGps"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/tvNotAnonymous"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:text="Invisible"/>
+                    android:layout_below="@+id/rl_device_type"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/courier_bold"
+                    android:gravity="center"
+                    android:text="@string/not_anonymous"
+                    android:textColor="@color/red"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
 
             </RelativeLayout>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/tablet"
-            android:layout_width="95dp"
-            android:layout_height="95dp"
-            android:layout_below="@id/device_type_text"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="15dp"
-            android:layout_toEndOf="@+id/phone"
-            android:background="@color/lightBlueColor">
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/tablet_device"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:background="@drawable/ic_baseline_bluetooth_24" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tvBt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/tablet_device"
-                    android:layout_centerInParent="true"
-                    android:layout_marginTop="5dp"
-                    android:text="@string/bluetooth"
-                    android:textAllCaps="true"
-                    android:textColor="@color/blue_lite"
-                    android:textSize="12sp" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tvBtStatus"
-                    android:layout_below="@+id/tvBt"
-                    android:layout_centerHorizontal="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="Invisible"/>
-            </RelativeLayout>
 
         </RelativeLayout>
-
-    </RelativeLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/rl_device_type">
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvWifi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:text="Wi-Fi status: "
-            android:textColor="@color/black"/>
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvGPS"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:text="Location status: "
-            android:textColor="@color/black"/>
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvBlueTooth"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:text="Bluetooth status: "
-            android:textColor="@color/black"/>
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvAirplaneMode"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:text="Airplane mode status: "
-            android:textColor="@color/black"/>
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvMobileData"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mobile Data Status: "
-            android:textSize="18sp"
-            android:textColor="@color/black"/>
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvBatteryStatus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Battery Status: "
-            android:textSize="18sp"
-            android:textColor="@color/black"/>
-
-    </LinearLayout>
-
+    </ScrollView>
 </RelativeLayout>

@@ -1,10 +1,10 @@
 package mm.com.myinstantappdemo.battery
 
 import android.os.BatteryManager
-import com.github.pwittchen.rxbattery.library.state.Health
-import com.github.pwittchen.rxbattery.library.state.Plugged
-import com.github.pwittchen.rxbattery.library.state.Status
-import com.github.pwittchen.rxbattery.library.state.Status.NOT_CHARGING
+import mm.com.myinstantappdemo.battery.state.Health
+import mm.com.myinstantappdemo.battery.state.Plugged
+import mm.com.myinstantappdemo.battery.state.Status
+import mm.com.myinstantappdemo.battery.state.Status.NOT_CHARGING
 
 data class BatteryState(
   val statusCode: Int,

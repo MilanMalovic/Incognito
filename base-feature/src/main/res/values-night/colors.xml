@@ -11,6 +11,7 @@
     <color name="black">#212C36</color>
     <color name="white">#FFFFFFFF</color>
     <color name="yellow">#AB8234</color>
-
+    <color name="lightBlueColor">#E0F3FA</color>
+    <color name="blackOrWhite">#FFFFFFFF</color>
 
 </resources>

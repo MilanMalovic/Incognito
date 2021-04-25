@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.pwittchen.rxbattery.library.state
+package mm.com.myinstantappdemo.battery.state
 
 enum class Status {
   CHARGING,

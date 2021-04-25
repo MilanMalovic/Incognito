@@ -8,7 +8,7 @@
     <string name="notification_channel_desc_two">This is channel two</string>
     <string name="btn_go_next">Go Next</string>
     <string name="welcome_header">Welcome to Incognito App</string>
-    <string name="welcome_below_header">Find out if you are invisible enough online and what your current status is</string>
+    <string name="welcome_below_header">Find out if you are invisible enough online, to others  and what your current status is</string>
     <string name="detail_screen_header">Hello, this is instant app feature</string>
 
 
@@ -17,7 +17,8 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="device_connectivity_status">device connectivity status</string>
-    <string name="bluetooth">Bluetooth</string>
+    <string name="device_connectivity_status2">(You should make all levels invisible to be incognito 100%)</string>
+    <string name="bluetooth">bluetooth</string>
     <string name="gps">GPS</string>
     <string name="wi_fi">WI-FI</string>
 
@@ -28,5 +29,16 @@
     <string name="available_access_points">Available Access Points:</string>
 
     <string name="requesting_location_access">Requesting location access</string>
-    <string name="do_you_want_to_open_location_settings">Do you want to open Location settings to enable location services? Without WiFi Access Points will not be detected.</string>
+    <string name="do_you_want_to_open_location_settings">Do you want to open Location settings to enable location services? Without WiFi Access Points will not be detected. Click on Dialog to continue</string>
+    <string name="not_anonymous">You should make all of those items invisible to be completely anonymous.</string>
+    <string name="anonymous">You are anonymous, no one sees you at the moment.</string>
+    <string name="mobile_data">gsm &amp; gprs</string>
+    <string name="check_status">Check Status</string>
+    <string name="battery">battery</string>
+    <string name="battery_status">Battery status</string>
+
+    <string name="level1_description">Avoid using unprotected Bluetooth and WiFi networks while in public. Sometimes, these connections are unsecured and there’s no way of telling how safe a network is when you’re on the go. A good practice is to disable your Bluetooth and WiFi if you aren’t using these services. Studies suggest that enabling these features makes it easier for hackers to get into your devices.</string>
+    <string name="level2_description">If you never connect your computer, you are 100 percent safe from hackers on the internet. There is no way someone can hack and retrieve, alter or monitor information without physical access.</string>
+    <string name="level3_description">If you want your secured information protected, airplane mode is a great way to temporarily isolate your phone from malevolent hackers. It limits your device’s connection to unsecured public networks and hides you from hackers.</string>
+
 </resources>

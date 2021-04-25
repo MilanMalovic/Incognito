@@ -1,6 +1,10 @@
 package mm.com.myinstantappdemo.tools
 
+import android.animation.ValueAnimator
 import android.content.Context
+import android.view.View
+import android.view.animation.LinearInterpolator
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import mm.com.myinstantappdemo.R
 
@@ -13,4 +17,17 @@ fun Context.showExitAlertDialog(
         .setPositiveButton(getString(R.string.yes)) { _, _ -> positiveButton(dialog) }
         .setNegativeButton(getString(R.string.no)) { dialog2, _ -> dialog2.dismiss() }
         .show()
+}
+
+
+// shows this view
+fun View.show(): View {
+    this.visibility = View.VISIBLE
+    return this
+}
+
+// makes the view gone
+fun View.gone(): View {
+    this.visibility = View.GONE
+    return this
 }

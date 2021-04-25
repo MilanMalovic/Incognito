@@ -1,5 +1,5 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@color/white"
+    android:background="@color/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -7,11 +7,52 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin">
 
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCustomLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:gravity="center"
+                android:letterSpacing="0.015"
+                android:text="Wi-Fi status"
+                android:textColor="@color/blue_lite"
+                android:textSize="22sp" />
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnWifi"
+        android:layout_below="@id/toolbar"
+        android:background="@drawable/rect_blue"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        android:padding="20dp"
+        android:text="Jump to Wi-Fi settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
     <TextView
+        android:layout_below="@id/btnWifi"
         android:id="@+id/wifi_signal_level_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="@dimen/text_view_padding"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/blue_lite"
         android:paddingTop="@dimen/text_view_padding"
         android:text="@string/wifi_signal_level"
         android:textAppearance="@android:style/TextAppearance.Medium"
@@ -36,6 +77,7 @@
         android:layout_below="@+id/wifi_signal_level"
         android:paddingBottom="@dimen/text_view_padding"
         android:paddingTop="@dimen/text_view_padding"
+        android:textColor="@color/blue_lite"
         android:text="@string/wifi_state"
         android:textAppearance="@android:style/TextAppearance.Medium"
         />
@@ -48,9 +90,12 @@
         android:paddingBottom="@dimen/text_view_padding"
         android:paddingTop="@dimen/text_view_padding"
         android:text="@string/available_access_points"
+        android:textColor="@color/blue_lite"
         android:textAppearance="@android:style/TextAppearance.Medium"
         android:textStyle="bold"
         />
+
+
 
     <ListView
         android:id="@+id/access_points"

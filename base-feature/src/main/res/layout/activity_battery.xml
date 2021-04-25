@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCustomLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:gravity="center"
+                android:letterSpacing="0.015"
+                android:text="@string/battery_status"
+                android:textColor="@color/blue_lite"
+                android:textSize="22sp" />
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp">
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@+id/batteryMeter"
+            android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvBatteryLevel"
+            android:letterSpacing="0.2"
+            android:lineSpacingMultiplier="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/courier_bold"
+            android:textColor="@color/greenMatrix"
+            android:textSize="16sp"
+            android:text="B"/>
+
+        </RelativeLayout>
+
+
+        <eo.view.batterymeter.BatteryMeterView
+            android:id="@+id/batteryMeter"
+            android:layout_width="110dp"
+            android:layout_height="260dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            app:batteryMeterChargeLevel="80"
+            app:batteryMeterChargingColor="@color/greenMatrix"
+            app:batteryMeterColor="#0277bd"
+            app:batteryMeterCriticalChargeLevel="15"
+            app:batteryMeterCriticalColor="#d84315"
+            app:batteryMeterIndicatorColor="@android:color/transparent"
+            app:batteryMeterIsCharging="true"
+            app:batteryMeterTheme="rounded"
+            app:batteryMeterUnknownColor="#e0e0e0" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
