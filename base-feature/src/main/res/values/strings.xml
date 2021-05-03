@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Incognito</string>
-    <string name="title_dynamicfeature">InstantApp</string>
+    <string name="title_dynamicfeature">Incognito</string>
 
     <string name="notification_channel_one">channel one</string>
     <string name="notification_channel_desc_one">This is channel one</string>
@@ -38,7 +38,7 @@
     <string name="battery_status">Battery status</string>
 
     <string name="level1_description">Avoid using unprotected Bluetooth and WiFi networks while in public. Sometimes, these connections are unsecured and there’s no way of telling how safe a network is when you’re on the go. A good practice is to disable your Bluetooth and WiFi if you aren’t using these services. Studies suggest that enabling these features makes it easier for hackers to get into your devices.</string>
-    <string name="level2_description">If you never connect your computer, you are 100 percent safe from hackers on the internet. There is no way someone can hack and retrieve, alter or monitor information without physical access.</string>
+    <string name="level2_description">If you disconnect your device, you are 100 percent safe from hackers on the internet. There is no way someone can hack and retrieve, alter or monitor information without physical access.</string>
     <string name="level3_description">If you want your secured information protected, airplane mode is a great way to temporarily isolate your phone from malevolent hackers. It limits your device’s connection to unsecured public networks and hides you from hackers.</string>
 
 </resources>

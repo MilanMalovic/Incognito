@@ -1,4 +1,4 @@
- package mm.com.myinstantappdemo
+package mm.com.myinstantappdemo
 
 import android.animation.ValueAnimator
 import android.bluetooth.BluetoothAdapter
@@ -16,7 +16,6 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.location.LocationManagerCompat
-import com.skydoves.balloon.ArrowOrientation.BOTTOM
 import com.skydoves.balloon.BalloonAnimation.OVERSHOOT
 import com.skydoves.balloon.createBalloon
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -44,7 +43,7 @@ import mm.com.myinstantappdemo.tools.show
 import mm.com.myinstantappdemo.tools.showExitAlertDialog
 import mm.com.myinstantappdemo.wifi.lib.ReactiveWifi
 
- class DetailActivity : AppCompatActivity() {
+class DetailActivity : AppCompatActivity() {
 
     private var batteryDisposable: Disposable? = null
     private var wifiStateSubscription: Disposable? = null
@@ -60,7 +59,7 @@ import mm.com.myinstantappdemo.wifi.lib.ReactiveWifi
         }
 
         ivDonate.setOnClickListener {
-           val intent = Intent(this, DonateActivity::class.java)
+            val intent = Intent(this, DonateActivity::class.java)
             startActivity(intent)
             overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left)
         }
@@ -82,131 +81,133 @@ import mm.com.myinstantappdemo.wifi.lib.ReactiveWifi
             val intent = Intent(Settings.ACTION_BLUETOOTH_SETTINGS)
             startActivity(intent)
         }
-        if(tvWiFiStatus.text.toString() == "Invisible" && tvMobileDataStatus.text.toString() == "Invisible" && tvGpsStatus.text.toString() == "Invisible" && tvBtStatus.text.toString() == "Invisible"){
+        if (tvWiFiStatus.text.toString() == "Invisible" && tvMobileDataStatus.text.toString() == "Invisible" && tvGpsStatus.text.toString() == "Invisible" && tvBtStatus.text.toString() == "Invisible" && tvMDStatus.text.toString() == "Visible") {
             tvAnonymous.show()
-        }else {
+        } else {
             tvAnonymous.gone()
         }
         onClickInfoBtn()
     }
 
+    private fun onClickInfoBtn() {
+        infoBtnMD.setOnClickListener {
+            val balloon = createBalloon(this@DetailActivity) {
+                setArrowVisible(false)
+                setWidthRatio(1.0f)
+                setTextSize(15f)
+                setCornerRadius(10f)
+                setWidthRatio(1.0f)
+                setMarginLeft(10)
+                setMarginRight(40)
+                setPadding(10)
+                setText("You should disable Mobile Data to make this item invisible")
+                setTextColor(ContextCompat.getColor(this@DetailActivity, R.color.blackOrWhite))
+                setBackgroundColor(ContextCompat.getColor(this@DetailActivity, R.color.background))
+                setBalloonAnimation(OVERSHOOT)
+                setLifecycleOwner(this@DetailActivity)
+            }
+            balloon.showAlignTop(rlMobileData, 0, 15)
+            balloon.setOnBalloonClickListener { balloon.dismiss() }
+        }
+
+        infoBtnAir.setOnClickListener {
+            val balloon = createBalloon(this@DetailActivity) {
+                setWidthRatio(1.0f)
+                setArrowVisible(false)
+                setTextSize(15f)
+                setCornerRadius(10f)
+                setWidthRatio(1.0f)
+                setMarginLeft(10)
+                setMarginRight(40)
+                setPadding(10)
+                setText("You should enable Air Plane mode to make this item invisible")
+                setTextColor(ContextCompat.getColor(this@DetailActivity, R.color.blackOrWhite))
+                setBackgroundColor(ContextCompat.getColor(this@DetailActivity, R.color.background))
+                setBalloonAnimation(OVERSHOOT)
+                setLifecycleOwner(this@DetailActivity)
+            }
+            balloon.showAlignTop(rlGsmGprs, 0, 15)
+            balloon.setOnBalloonClickListener { balloon.dismiss() }
+        }
+
+        infoBtnWiFi.setOnClickListener {
+            val balloon = createBalloon(this@DetailActivity) {
+                setWidthRatio(1.0f)
+                setTextSize(15f)
+                setArrowVisible(false)
+                setCornerRadius(10f)
+                setWidthRatio(1.0f)
+                setMarginLeft(10)
+                setMarginRight(40)
+                setPadding(10)
+                setText("You should disable Wi-fi to make this item invisible")
+                setTextColor(ContextCompat.getColor(this@DetailActivity, R.color.blackOrWhite))
+                setBackgroundColor(ContextCompat.getColor(this@DetailActivity, R.color.background))
+                setBalloonAnimation(OVERSHOOT)
+                setLifecycleOwner(this@DetailActivity)
+            }
+            balloon.showAlignTop(wiFi, 0, 15)
+            balloon.setOnBalloonClickListener { balloon.dismiss() }
+        }
+
+        infoBtnBT.setOnClickListener {
+            val balloon = createBalloon(this@DetailActivity) {
+                setWidthRatio(1.0f)
+                setArrowVisible(false)
+                setTextSize(15f)
+                setCornerRadius(10f)
+                setWidthRatio(1.0f)
+                setMarginLeft(10)
+                setMarginRight(40)
+                setPadding(10)
+                setText("You should disable Bluetooth to make this item invisible")
+                setTextColor(ContextCompat.getColor(this@DetailActivity, R.color.blackOrWhite))
+                setBackgroundColor(ContextCompat.getColor(this@DetailActivity, R.color.background))
+                setBalloonAnimation(OVERSHOOT)
+                setLifecycleOwner(this@DetailActivity)
+            }
+            balloon.showAlignTop(rlBlueTooth, 0, 15)
+            balloon.setOnBalloonClickListener { balloon.dismiss() }
+        }
 
 
-     private fun onClickInfoBtn(){
-         infoBtnMD.setOnClickListener {
-             val balloon = createBalloon(this@DetailActivity) {
-                 setWidthRatio(1.0f)
-                 setTextSize(15f)
-                 setCornerRadius(10f)
-                 setWidthRatio(1.0f)
-                 setMarginLeft(10)
-                 setMarginRight(40)
-                 setPadding(10)
-                 setText("You should disable Mobile Data to make this item invisible")
-                 setTextColor(ContextCompat.getColor(this@DetailActivity, R.color.blackOrWhite))
-                 setBackgroundColor(ContextCompat.getColor(this@DetailActivity, R.color.background))
-                 setBalloonAnimation(OVERSHOOT)
-                 setLifecycleOwner(this@DetailActivity)
-             }
-             balloon.showAlignTop(rlMobileData, 0, 15)
-             balloon.setOnBalloonClickListener { balloon.dismiss() }
-         }
+        infoBtnGPS.setOnClickListener {
+            val balloon = createBalloon(this@DetailActivity) {
+                setWidthRatio(1.0f)
+                setTextSize(15f)
+                setArrowVisible(false)
+                setCornerRadius(10f)
+                setWidthRatio(1.0f)
+                setMarginLeft(10)
+                setMarginRight(40)
+                setPadding(10)
+                setText("You should disable GPS Location to make this item invisible")
+                setTextColor(ContextCompat.getColor(this@DetailActivity, R.color.blackOrWhite))
+                setBackgroundColor(ContextCompat.getColor(this@DetailActivity, R.color.background))
+                setBalloonAnimation(OVERSHOOT)
+                setLifecycleOwner(this@DetailActivity)
+            }
+            balloon.showAlignTop(infoBtnGPS, 0, 15)
+            balloon.setOnBalloonClickListener { balloon.dismiss() }
+        }
+    }
 
-         infoBtnAir.setOnClickListener {
-             val balloon = createBalloon(this@DetailActivity) {
-                 setWidthRatio(1.0f)
-                 setTextSize(15f)
-                 setCornerRadius(10f)
-                 setWidthRatio(1.0f)
-                 setMarginLeft(10)
-                 setMarginRight(40)
-                 setPadding(10)
-                 setText("You should enable Air Plane mode to make this item invisible")
-                 setTextColor(ContextCompat.getColor(this@DetailActivity, R.color.blackOrWhite))
-                 setBackgroundColor(ContextCompat.getColor(this@DetailActivity, R.color.background))
-                 setBalloonAnimation(OVERSHOOT)
-                 setLifecycleOwner(this@DetailActivity)
-             }
-             balloon.showAlignTop(rlGsmGprs, 0, 15)
-             balloon.setOnBalloonClickListener { balloon.dismiss() }
-         }
-
-         infoBtnWiFi.setOnClickListener {
-             val balloon = createBalloon(this@DetailActivity) {
-                 setWidthRatio(1.0f)
-                 setTextSize(15f)
-                 setCornerRadius(10f)
-                 setWidthRatio(1.0f)
-                 setMarginLeft(10)
-                 setMarginRight(40)
-                 setPadding(10)
-                 setText("You should disable Wi-fi to make this item invisible")
-                 setTextColor(ContextCompat.getColor(this@DetailActivity, R.color.blackOrWhite))
-                 setBackgroundColor(ContextCompat.getColor(this@DetailActivity, R.color.background))
-                 setBalloonAnimation(OVERSHOOT)
-                 setLifecycleOwner(this@DetailActivity)
-             }
-             balloon.showAlignTop(wiFi, 0, 15)
-             balloon.setOnBalloonClickListener { balloon.dismiss() }
-         }
-
-         infoBtnBT.setOnClickListener {
-             val balloon = createBalloon(this@DetailActivity) {
-                 setWidthRatio(1.0f)
-                 setTextSize(15f)
-                 setCornerRadius(10f)
-                 setWidthRatio(1.0f)
-                 setMarginLeft(10)
-                 setMarginRight(40)
-                 setPadding(10)
-                 setText("You should disable Bluetooth to make this item invisible")
-                 setTextColor(ContextCompat.getColor(this@DetailActivity, R.color.blackOrWhite))
-                 setBackgroundColor(ContextCompat.getColor(this@DetailActivity, R.color.background))
-                 setBalloonAnimation(OVERSHOOT)
-                 setLifecycleOwner(this@DetailActivity)
-             }
-             balloon.showAlignTop(rlBlueTooth, 0, 15)
-             balloon.setOnBalloonClickListener { balloon.dismiss() }
-         }
-
-
-         infoBtnGPS.setOnClickListener {
-             val balloon = createBalloon(this@DetailActivity) {
-                 setWidthRatio(1.0f)
-                 setTextSize(15f)
-                 setCornerRadius(10f)
-                 setWidthRatio(1.0f)
-                 setMarginLeft(10)
-                 setMarginRight(40)
-                 setPadding(10)
-                 setText("You should disable GPS Location to make this item invisible")
-                 setTextColor(ContextCompat.getColor(this@DetailActivity, R.color.blackOrWhite))
-                 setBackgroundColor(ContextCompat.getColor(this@DetailActivity, R.color.background))
-                 setBalloonAnimation(OVERSHOOT)
-                 setLifecycleOwner(this@DetailActivity)
-             }
-             balloon.showAlignTop(infoBtnGPS, 0, 15)
-             balloon.setOnBalloonClickListener { balloon.dismiss() }
-         }
-
-
-     }
-     /**
-      * @return null if unconfirmed
-      */
-     fun isMobileDataEnabled(): Boolean? {
-         val connectivityService = getSystemService(CONNECTIVITY_SERVICE)
-         val cm = connectivityService as ConnectivityManager
-         return try {
-             val c = Class.forName(cm.javaClass.name)
-             val m = c.getDeclaredMethod("getMobileDataEnabled")
-             m.isAccessible = true
-             return m.invoke(cm) as Boolean
-         } catch (e: Exception) {
-             e.printStackTrace()
-             null
-         }
-     }
+    /**
+     * @return null if unconfirmed
+     */
+    fun isMobileDataEnabled(): Boolean? {
+        val connectivityService = getSystemService(CONNECTIVITY_SERVICE)
+        val cm = connectivityService as ConnectivityManager
+        return try {
+            val c = Class.forName(cm.javaClass.name)
+            val m = c.getDeclaredMethod("getMobileDataEnabled")
+            m.isAccessible = true
+            return m.invoke(cm) as Boolean
+        } catch (e: Exception) {
+            e.printStackTrace()
+            null
+        }
+    }
 
     override fun onResume() {
         super.onResume()
@@ -214,11 +215,13 @@ import mm.com.myinstantappdemo.wifi.lib.ReactiveWifi
         startWifiStateSubscription()
 
 
-        if(isMobileDataEnabled()!!){
+        if (isMobileDataEnabled()!!) {
             tvMDStatus.text = "Visible"
             tvMDStatus.setTextColor(ContextCompat.getColor(this, R.color.red))
-        }else if (!isMobileDataEnabled()!!){
+            infoBtnMD.show()
+        } else if (!isMobileDataEnabled()!!) {
             tvMDStatus.text = "Invisible"
+            infoBtnMD.gone()
             tvMDStatus.setTextColor(ContextCompat.getColor(this, R.color.green))
         }
 
@@ -226,7 +229,9 @@ import mm.com.myinstantappdemo.wifi.lib.ReactiveWifi
         if (isLocationEnabled(this)) {
             tvGpsStatus.setTextColor(ContextCompat.getColor(this, R.color.red))
             tvGpsStatus.text = "Visible"
+            infoBtnGPS.show()
         } else {
+            infoBtnGPS.gone()
             tvGpsStatus.setTextColor(ContextCompat.getColor(this, R.color.green))
             tvGpsStatus.text = "Invisible"
         }
@@ -234,16 +239,20 @@ import mm.com.myinstantappdemo.wifi.lib.ReactiveWifi
 
         if (isAirplaneModeOn()) {
             tvMobileDataStatus.text = "Invisible"
+            infoBtnAir.gone()
             tvMobileDataStatus.setTextColor(ContextCompat.getColor(this, R.color.green))
         } else {
+            infoBtnAir.show()
             tvMobileDataStatus.setTextColor(ContextCompat.getColor(this, R.color.red))
             tvMobileDataStatus.text = "Visible"
         }
 
 
-        if(tvWiFiStatus.text.toString() == "Invisible" && tvMobileDataStatus.text.toString() == "Invisible" && tvGpsStatus.text.toString() == "Invisible" && tvBtStatus.text.toString() == "Invisible"){
+        if (tvWiFiStatus.text.toString() == "Invisible" && tvMobileDataStatus.text.toString() == "Invisible" && tvGpsStatus.text.toString() == "Invisible" && tvBtStatus.text.toString() == "Invisible" && tvMDStatus.text.toString()
+            == "Invisible"
+        ) {
             tvAnonymous.show()
-        }else {
+        } else {
             tvAnonymous.gone()
         }
     }
@@ -261,14 +270,17 @@ import mm.com.myinstantappdemo.wifi.lib.ReactiveWifi
                     "enabled" -> {
                         tvWiFiStatus.text = "Visible"
                         tvWiFiStatus.setTextColor(ContextCompat.getColor(this, R.color.red))
+                        infoBtnWiFi.show()
                         tvAnonymous.gone()
                     }
                     "enabling" -> {
                         tvWiFiStatus.text = "Visible"
+                        infoBtnWiFi.show()
                         tvWiFiStatus.setTextColor(ContextCompat.getColor(this, R.color.red))
                         tvAnonymous.gone()
                     }
                     "disabled" -> {
+                        infoBtnWiFi.gone()
                         tvWiFiStatus.text = "Invisible"
                         tvWiFiStatus.setTextColor(ContextCompat.getColor(this, R.color.green))
                     }
@@ -326,10 +338,12 @@ import mm.com.myinstantappdemo.wifi.lib.ReactiveWifi
             tvBtStatus.setTextColor(ContextCompat.getColor(this, R.color.green))
         } else if (!mBluetoothAdapter.isEnabled) {
             tvBtStatus.text = "Invisible"
+            infoBtnBT.gone()
             tvBtStatus.setTextColor(ContextCompat.getColor(this, R.color.green))
         } else {
             // Bluetooth is enabled
             tvBtStatus.text = "Visible"
+            infoBtnBT.show()
             tvBtStatus.setTextColor(ContextCompat.getColor(this, R.color.red))
         }
     }

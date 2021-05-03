@@ -115,7 +115,7 @@
 
                     <RelativeLayout
                         android:id="@+id/wiFi"
-                        android:layout_width="95dp"
+                        android:layout_width="120dp"
                         android:layout_height="95dp"
                         android:layout_below="@id/tvBelowLvl1"
                         android:layout_marginTop="15dp"
@@ -123,8 +123,8 @@
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/infoBtnWiFi"
-                            android:layout_width="10dp"
-                            android:layout_height="10dp"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
                             android:layout_alignParentEnd="true"
                             android:layout_marginTop="5dp"
                             android:layout_marginEnd="5dp"
@@ -171,7 +171,7 @@
 
                     <RelativeLayout
                         android:id="@+id/rlBlueTooth"
-                        android:layout_width="95dp"
+                        android:layout_width="120dp"
                         android:layout_height="95dp"
                         android:layout_below="@id/tvBelowLvl1"
                         android:layout_marginStart="10dp"
@@ -181,8 +181,8 @@
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/infoBtnBT"
-                            android:layout_width="10dp"
-                            android:layout_height="10dp"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
                             android:layout_alignParentEnd="true"
                             android:layout_marginTop="5dp"
                             android:layout_marginEnd="5dp"
@@ -255,7 +255,7 @@
 
                     <RelativeLayout
                         android:id="@+id/rlMobileData"
-                        android:layout_width="95dp"
+                        android:layout_width="120dp"
                         android:layout_height="95dp"
                         android:layout_below="@id/tvBelowLvl2"
                         android:layout_marginTop="15dp"
@@ -264,14 +264,13 @@
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/infoBtnMD"
-                            android:layout_width="10dp"
-                            android:layout_height="10dp"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
                             android:layout_alignParentEnd="true"
                             android:layout_marginTop="5dp"
                             android:layout_marginEnd="5dp"
                             android:background="@drawable/thumb_info"
                             android:gravity="center"
-                            android:fontFamily="@font/karla_bold"
                             android:paddingBottom="3dp"
                             android:text="i"
                             android:textAllCaps="false"
@@ -339,7 +338,7 @@
 
                     <RelativeLayout
                         android:id="@+id/rlGps"
-                        android:layout_width="95dp"
+                        android:layout_width="120dp"
                         android:layout_height="95dp"
                         android:layout_below="@id/tvBelowLvl3"
                         android:layout_marginStart="10dp"
@@ -349,15 +348,14 @@
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/infoBtnGPS"
-                            android:layout_width="10dp"
-                            android:layout_height="10dp"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
                             android:layout_alignParentEnd="true"
                             android:layout_marginTop="5dp"
                             android:layout_marginEnd="5dp"
                             android:background="@drawable/thumb_info"
                             android:gravity="center"
                             android:paddingBottom="3dp"
-                            android:fontFamily="@font/karla_bold"
                             android:text="i"
                             android:textAllCaps="false"
                             android:textColor="@color/blackOrWhite"
@@ -401,7 +399,7 @@
 
                     <RelativeLayout
                         android:id="@+id/rlGsmGprs"
-                        android:layout_width="95dp"
+                        android:layout_width="120dp"
                         android:layout_height="95dp"
                         android:layout_below="@id/tvBelowLvl3"
                         android:layout_marginTop="15dp"
@@ -410,14 +408,13 @@
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/infoBtnAir"
-                            android:layout_width="10dp"
-                            android:layout_height="10dp"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
                             android:layout_alignParentEnd="true"
                             android:layout_marginTop="5dp"
                             android:layout_marginEnd="5dp"
                             android:background="@drawable/thumb_info"
                             android:gravity="center"
-                            android:fontFamily="@font/karla_bold"
                             android:paddingBottom="3dp"
                             android:text="i"
                             android:textAllCaps="false"
