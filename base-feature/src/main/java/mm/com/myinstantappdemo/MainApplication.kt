@@ -5,7 +5,6 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.os.Build
 import mm.com.myinstantappdemo.R.string
-import java.util.TimeZone
 
 class MainApplication : Application() {
 
@@ -24,7 +23,6 @@ class MainApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         createNotificationChannels()
-        TimeZone.setDefault(TimeZone.getDefault())
     }
 
     private fun createNotificationChannels() {

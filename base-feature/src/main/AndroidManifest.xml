@@ -11,7 +11,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="com.android.vending.BILLING" />
 
 
     <dist:module dist:instant="true" />
@@ -23,7 +23,7 @@
         android:roundIcon="@drawable/ic_thuglife"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyInstantAppDemo">
-        <activity android:name=".InitialActivity">
+        <activity android:name="mm.com.myinstantappdemo.InitialActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,11 +32,12 @@
         </activity>
 
 
-        <activity android:name=".DetailActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".DonateActivity"
-            android:screenOrientation="portrait"
-            />
+        <activity
+            android:name="mm.com.myinstantappdemo.DetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="mm.com.myinstantappdemo.DonateActivity"
+            android:screenOrientation="portrait" />
 
 
     </application>

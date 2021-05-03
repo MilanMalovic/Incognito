@@ -6,7 +6,9 @@
 
 
     <RelativeLayout
+        android:id="@+id/logo"
         android:layout_width="wrap_content"
+        android:background="@android:color/black"
         android:layout_centerInParent="true"
         android:layout_height="wrap_content">
 
@@ -14,19 +16,8 @@
         android:id="@+id/ivWelcomeIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_thuglife" />
+        android:src="@drawable/ic_incognito" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvIncognitoWelcome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Incognito"
-            android:layout_below="@id/ivWelcomeIcon"
-            android:fontFamily="@font/yesevaone_regular"
-            android:layout_centerHorizontal="true"
-            android:gravity="center"
-            android:textSize="40sp"
-            android:textColor="#000000"/>
 
 
     </RelativeLayout>

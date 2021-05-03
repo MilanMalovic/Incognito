@@ -6,8 +6,7 @@ import android.view.animation.Animation
 import android.view.animation.Animation.AnimationListener
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_init.ivWelcomeIcon
-import kotlinx.android.synthetic.main.activity_init.tvIncognitoWelcome
+import kotlinx.android.synthetic.main.activity_init.logo
 
 class InitialActivity : AppCompatActivity() {
 
@@ -18,10 +17,8 @@ class InitialActivity : AppCompatActivity() {
     }
 
     private fun setStartingAnimation() {
-        val animationLogo: Animation = AnimationUtils.loadAnimation(this, R.anim.fade_in_filled)
-        val animRotate = AnimationUtils.loadAnimation(this, R.anim.rotate)
-        ivWelcomeIcon.startAnimation(animRotate)
-        tvIncognitoWelcome.startAnimation(animationLogo)
+        val animRotate = AnimationUtils.loadAnimation(this, R.anim.anim_pulse)
+        logo.startAnimation(animRotate)
         animRotate.setAnimationListener(object : AnimationListener {
             override fun onAnimationStart(arg0: Animation) {
             }
