@@ -1,10 +1,7 @@
 package mm.com.myinstantappdemo.tools
 
-import android.animation.ValueAnimator
 import android.content.Context
 import android.view.View
-import android.view.animation.LinearInterpolator
-import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import mm.com.myinstantappdemo.R
 

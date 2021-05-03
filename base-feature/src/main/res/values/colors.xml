@@ -17,6 +17,8 @@
     <color name="greenMatrix">#29882F</color>
     <color name="blackOrWhite">#001E2E</color>
     <color name="toolbarColor">#001E2E</color>
+    <color name="gray_light">#F7F8F9</color>
+
 
 
 </resources>
