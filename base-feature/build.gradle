@@ -14,7 +14,7 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
     defaultConfig {
-        applicationId "mm.com.incognito"
+        applicationId "mm.com.myinstantappdemo"
         minSdkVersion 22
         targetSdkVersion 30
         versionCode 14
